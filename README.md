@@ -1,20 +1,23 @@
-# CloudflareApiTools
+# Cloudflare API Tools
 
-**TODO: Add description**
+WARNING: this script isn't working yet.
+
+A simple command line utility to manage development mode and cache clearing on Cloudflare.
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
+Erlang should be installed on your computer. Elixir is not required. Put the `cf` file in your path somewhere, then type `cf` for usage.
 
-  1. Add cloudflare_api_tools to your list of dependencies in `mix.exs`:
+## Usage
 
-        def deps do
-          [{:cloudflare_api_tools, "~> 0.0.1"}]
-        end
+Clear all caches:
 
-  2. Ensure cloudflare_api_tools is started before your application:
+    cf -c
 
-        def application do
-          [applications: [:cloudflare_api_tools]]
-        end
+Turn on development mode:
 
+    cf -d on
+
+# License
+
+MIT licenced.

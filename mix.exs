@@ -2,11 +2,12 @@ defmodule CloudflareApiTools.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :cloudflare_api_tools,
+    [app: :cf,
      version: "0.0.1",
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     escript: [main_module: CloudflareApiTools],
      deps: deps]
   end
 
