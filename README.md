@@ -30,3 +30,6 @@ RTM:
 
     $ cf -h
 
+## TODO
+
+1. Make it interactive by loading all of the account's domains with a numbered menu.
