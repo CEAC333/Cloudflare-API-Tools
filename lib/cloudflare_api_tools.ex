@@ -1,4 +1,8 @@
 defmodule CloudflareApiTools do
+  use HTTPoison.Base
+
+  @expected_fields ~w(result success errors messages)
+
   def main(args) do
     args
     |> parse_args
@@ -33,6 +37,7 @@ defmodule CloudflareApiTools do
   end
 
   def process({:clearcache, clearcache}) do
+    
     IO.puts "Got clearcache: #{clearcache}"
   end
 
