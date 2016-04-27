@@ -8,3 +8,5 @@ erl_crash.dump
 *.py[oc]
 *.sw[op]
 config.py
+__pycache__/
+
