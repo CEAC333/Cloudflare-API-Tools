@@ -1,9 +1,9 @@
-from sys import exit
 import json
+from sys import exit
 import argparse
 import requests
 from config import api_token, email_address
-from pprint import pprint
+
 BASE_URL = 'https://api.cloudflare.com/client/v4'
 
 parser = argparse.ArgumentParser()
@@ -36,12 +36,15 @@ def clear_cache(zone_id, headers):
     print(res.text)
 
 
-def set_devmode_on(zone_id, headers):
-    pass
-
-
-def set_devmode_off(zone_id, headers):
-    pass
+def set_devmode(zone_id, headers, status='on'):
+    """Sets development mode on or off."""
+    url = '{}/zones/{}/settings/development_mode'.format(BASE_URL, zone_id)
+    _payload = {
+        'value': status.lower()
+    }
+    payload = json.dumps(_payload)
+    res = requests.request('PATCH', url, headers=headers, data=payload)
+    print(res.text)
 
 
 if __name__ == '__main__':
@@ -51,11 +54,11 @@ if __name__ == '__main__':
         print('Please provide a zone (domain).')
         exit()
 
-    if args.clearcache:
+    if args.cc:
         clear_cache(zid, hdrs)
 
     if args.devmode:
         if args.devmode.lower() == 'on':
-            set_devmode_on(zid, hdrs)
+            set_devmode(zid, hdrs)
         elif args.devmode.lower() == 'off':
-            set_devmode_off(zid, hdrs)
+            set_devmode(zid, hdrs, status='off')
