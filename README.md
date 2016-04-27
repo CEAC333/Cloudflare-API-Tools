@@ -1,6 +1,6 @@
 # Cloudflare API Tools
 
-WARNING: this script isn't working yet.
+WARNING: this script is in the early stages and isn't well-tested. Be sure you understand what it does and how it works before you use it.
 
 A simple command line utility to manage development mode and cache clearing on Cloudflare.
 
