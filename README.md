@@ -6,21 +6,27 @@ A simple command line utility to manage development mode and cache clearing on C
 
 Python 3.
 
+## Installation
+
+* Be sure that requests is installed.
+* Alias `python3 /path/to/cf.py` to `cf` or whatever you want.
+* Put API credentials in `config_example.py` and rename it to `config.py`.
+
 ## Usage
 
 Clear all caches:
 
-    python3 -z example.com -c
+    $ cf -z example.com -c
 
 Turn on development mode:
 
-    python3 -z example.com -d on
+    $ cf -z example.com -d on
 
 Turn off development mode:
 
-    python3 -z example.com -d off
+    $ cf -z example.com -d off
 
 RTM:
 
-    python3 -h
+    $ cf -h
 

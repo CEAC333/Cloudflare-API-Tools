@@ -8,7 +8,7 @@ BASE_URL = 'https://api.cloudflare.com/client/v4'
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-z', '--zone', help='The top-level domain of your site.')
-parser.add_argument('-c', '--cc', help='Clear all caches.')
+parser.add_argument('-c', '--cc', help='Clear all caches.', action='store_true')
 parser.add_argument('-d', '--devmode', help='Turn development mode on or off.')
 args = parser.parse_args()
 
